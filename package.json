@@ -1,0 +1,35 @@
+{
+  "name": "sector_admin",
+  "description": "Sector Admin theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "contributors": [
+    "Sparks Interactive"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "reinstall": "yarn rimraf node_modules && yarn cache clean && yarn install",
+    "postinstall": "find node_modules/ -name '*.info.yml' -type f -delete",
+    "clean": "rimraf css/* && rimraf js/dist/*",
+    "pcss": "yarn postcss ./src/{**,.,*/**}/*.css --dir ./dist --base src --verbose",
+    "build": "NODE_ENV=production yarn postcss ./src/{**,.,*/**}*.css --dir ./dist --base src --no-map"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.4",
+    "postcss-apply": "^0.12.0",
+    "postcss-cli": "^7.1.0",
+    "postcss-color-function": "^4.1.0",
+    "postcss-css-variables": "^0.17.0",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-custom-properties": "^9.1.1",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-inline-svg": "^4.1.0",
+    "postcss-media-variables": "^2.0.1",
+    "postcss-nested": "^4.2.1",
+    "postcss-nesting": "^7.0.1",
+    "postcss-partial-import": "^4.1.0",
+    "postcss-pxtorem": "^5.1.0",
+    "rimraf": "^3.0.2"
+  }
+}

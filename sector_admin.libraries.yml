@@ -1,0 +1,16 @@
+global:
+  version: "1.0.x"
+  js:
+    js/contextual_links.js: {}
+  css:
+    theme:
+      dist/theme.css: {}
+      dist/overrides.css: {}
+      dist/utilities.css: {}
+      dist/components/toolbar/toolbar.css: {}
+      dist/components/messages/messages.css: {}
+      dist/components/media/media.css: {}
+      dist/components/button/button.css: {}
+      dist/components/layout/layout.css: {}
+      dist/components/ckeditor/ckeditor.css: {}
+      dist/components/character/character.css: {}

@@ -1,0 +1,12 @@
+:root {
+  --white: rgb(255,255,255);
+  --black: #000000;
+  --dark: #1a1a1a;
+  --info: rgb(135, 219, 252);
+  
+  --sector-gray: #667891;
+  --sector-red: #EF604D;
+  --sector-blue: #436FFC;
+  --sector-green: #02B290;
+  --sector-brown: #B28A70;
+}

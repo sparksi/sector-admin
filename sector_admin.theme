@@ -1,0 +1,18 @@
+<?php
+
+
+function sector_admin_preprocess_html(&$variables) {
+
+  $theme = \Drupal::theme()->getActiveTheme();
+  
+  $svgFavicon = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'rel' => 'shortcut icon',
+      'type' => 'image/svg+xml',
+      'href' => '/' . $theme->getPath() .'/favicon.svg'
+    ]
+  ];
+  $variables['page']['#attached']['html_head'][] = [$svgFavicon, 'svg-favicon'];
+}
+

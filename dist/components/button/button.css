@@ -1,0 +1,6 @@
+.path-admin .button.button--primary,
+.layout-container .button.button--primary {
+  background-color: #436FFC;
+  background-color: var(--sector-blue);
+  background-image: none;
+}

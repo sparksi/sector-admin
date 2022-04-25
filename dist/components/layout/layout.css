@@ -1,0 +1,27 @@
+.layout-node-form.layout-node-form .layout-region-node-footer__content > h3 {
+    margin-top: 0;
+    margin-bottom: .75em;
+  }
+  
+  @media (min-width: 780px) {
+    .layout-node-form.layout-node-form .layout-region-node-footer__content {
+      margin-top: 0;
+      border-top: 0;
+      padding-top: 0;
+      border: 1px solid #bfbfbf;
+      background-color: #fcfcfa;
+      padding: 1em 1.5em;
+      border-radius: 3px;
+    }
+    
+    .layout-node-form.layout-node-form .layout-region-node-secondary {      
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    
+    .layout-node-form.layout-node-form .layout-region-node-secondary .entity-meta {
+      max-height: 63vh;
+      overflow-y: auto;
+      margin-top: 2vh;
+    }
+  }

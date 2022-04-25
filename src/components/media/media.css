@@ -1,0 +1,22 @@
+.media-library-item__click-to-select-trigger .is-unpublished {
+  border: 1px dashed red;
+}
+
+
+.media-library-item__remove.button {
+  right: inherit;
+  left: 10px;
+}
+
+.media-library-wrapper {
+  flex-wrap: wrap;
+}
+
+.media-library-wrapper .media-library-content {
+  flex: 1
+}
+
+.media-library-wrapper > [aria-label="Error message"] {
+  width:100%;
+  padding: 15px;
+}

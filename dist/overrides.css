@@ -1,0 +1,7 @@
+/*
+  Can't do this PHP :( I tried to unset it but the array key is required
+  further down the chain.. So dirty hack to hide it.
+*/
+#edit-field-smart-event-date-0-repeat-advanced {
+    display: none;
+}

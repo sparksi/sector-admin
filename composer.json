@@ -1,0 +1,13 @@
+{
+    "name": "sparksi/sector-admin",
+    "description": "Subtheme of Seven",
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "type" : "drupal-custom-theme",
+    "authors": [
+      {
+        "name": "Sparks Interactive"
+      }
+    ],
+    "require": {}
+  }

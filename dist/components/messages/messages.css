@@ -1,0 +1,19 @@
+.messages--info {
+  color: var(--blue);
+  border-color: #72caf8 #72caf8 #72caf8 transparent;
+  background-color: rgba(135, 219, 252, .25);
+  background-image: url('./info.svg');
+  background-repeat: no-repeat;
+  background-size: 1.35em;
+  background-position: 0.625rem 1.0625rem;
+  box-shadow: -0.5rem 0 0 #72caf8;
+  
+}
+  
+  .messages--info p:first-child {
+    margin-top: 0;
+  }
+  
+  .messages--info p:last-child {
+    margin-bottom: 0;
+  }
