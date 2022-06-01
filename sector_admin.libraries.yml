@@ -14,3 +14,4 @@ global:
       dist/components/layout/layout.css: {}
       dist/components/ckeditor/ckeditor.css: {}
       dist/components/character/character.css: {}
+      dist/components/dialog/dialog.css: {}

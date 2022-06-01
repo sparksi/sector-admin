@@ -1,38 +1,27 @@
-body {
-  background: rgb(255,255,255);
-  background: var(--white);
-}
-
-.path-admin, .dialog-off-canvas-main-canvas {
+body.sector-admin-theme {
   font-family: -apple-system,BlinkMacSystemFont,arial,sans-serif;
-}
-
-.ui-dialog .ui-dialog-titlebar {
-  background-color: var(--sector-blue, #6b6b6b);
-}
-
-.toolbar .toolbar-tray {
-  background-color: rgba(255,255,255,.725);
-  backdrop-filter: blur(3px);
+  font-family: var(--sector-admin-font);;
+  background: rgb(255,255,255);;
+  background: var(--sector-admin-white);
 }
 
 .toolbar .toolbar-bar {
-  --toolbar-stripe-a: rgba(0,0,0,0);
-  --toolbar-stripe-b: rgba(0,0,0,0.125);
-
-  //background-color: var(--toolbar-stripe-a);
+  --toolbar-stripe-a: var(--admin-toolbar-a, var(--sector-admin-dark));
+  --toolbar-stripe-b: var(--admin-toolbar-b, var(--sector-admin-black));
+  
+  background-color: var(--toolbar-stripe-a);
   /*background: repeating-linear-gradient( 45deg, var(--dark), var(--dark) 0.625rem, var(--black) 0.625rem, var(--black) 1.25rem );*/
-  //background: repeating-linear-gradient( 45deg, var( --toolbar-stripe-a), var( --toolbar-stripe-a) 0.625rem, var(--toolbar-stripe-b) 0.625rem, var(--toolbar-stripe-b) 1.25rem );
+  background: repeating-linear-gradient( 45deg, var( --toolbar-stripe-a), var( --toolbar-stripe-a) 0.625rem, var(--toolbar-stripe-b) 0.625rem, var(--toolbar-stripe-b) 1.25rem );
   font-family: -apple-system,BlinkMacSystemFont,arial,sans-serif;
+  font-family: var(--sector-admin-font);
 }
 
-.toolbar .toolbar-bar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient( 45deg, var( --toolbar-stripe-a), var( --toolbar-stripe-a) 0.625rem, var(--toolbar-stripe-b) 0.625rem, var(--toolbar-stripe-b) 1.25rem );
-  display: block;
-}
+/* has environment colour implemented */
+
+.toolbar .toolbar-bar[style] {
+    --toolbar-stripe-a: transparent;
+    --toolbar-stripe-b: rgba(0,0,0,.125);
+  }
 
 .toolbar-tray a.toolbar-icon-admin-toolbar-tools-help {
   display: inline-block;
@@ -40,12 +29,13 @@ body {
   height:2.5rem;
   width: 2.5rem;
   text-indent: -5000em;
-  background-color: var(--sector-blue);
+  background-color: #436FFC;
+  background-color: var(--sector-admin-blue);
 }
 
 .toolbar-tray a.toolbar-icon-admin-toolbar-tools-help:hover, .toolbar-tray a.toolbar-icon-admin-toolbar-tools-help:focus {
     background-color: #02B290;
-    background-color: var(--sector-green, #02B290);
+    background-color: var(--sector-admin-green);
   }
 
 .toolbar-tray a.toolbar-icon-admin-toolbar-tools-help:hover::before, .toolbar-tray a.toolbar-icon-admin-toolbar-tools-help:focus::before {
@@ -64,10 +54,12 @@ body {
 
 .layout-node-form {
   font-family: -apple-system,BlinkMacSystemFont,arial,sans-serif;
+  font-family: var(--sector-admin-font);
 }
 
 .layout-container {
   font-family: -apple-system,BlinkMacSystemFont,arial,sans-serif;
+  font-family: var(--sector-admin-font);
 }
 
 .layout-container .page-title {
@@ -88,123 +80,3 @@ body {
     position: sticky;
     top: calc(5rem + 1rem);
   }
-
-/*
-.content-header.content-header {
-    background-color: var(--primary);
-}
-
-
-.content-header.content-header .page-title {
-    color: white;
-}
-
-
-.layout-node-form {
-    display: grid;
-    grid-template-areas: "main sidebar" "footer footer";
-    grid-template-columns: 2.5fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 0 2em;
-}
-
-.layout-region-node-main, .layout-region-node-footer, .layout-region-node-secondary {
-    float: none;
-    width: auto;
-}
-
-.layout-region-node-main, .layout-region-node-secondary {
-    position: sticky;
-    top: 6em;
-    align-self: flex-start;
-}
-
-.layout-region-node-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 499;
-}
-
-.layout-region-node-footer__content {
-    border-top: 0;
-    padding-top: 0;
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-
-    .form-item-status-value {
-
-        > .option {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient( 45deg, #ffe046, #ffe046 0.625rem, rgb(253, 208, 40) 0.625rem, rgb(253, 208, 40) 1.25rem );
-            display: flex;
-            align-items: center;
-            text-indent: -1000em;
-            text-align: left;
-
-            &::after {
-                content: 'Unpublished';
-                width: auto;
-                text-indent: 0;
-                height: 2em;
-                position: absolute;
-                display: block;
-                background-repeat: no-repeat;
-                background-size: auto 100%;
-                background-position: right center;
-                background-image: svg-load('../../icons/toggle-left.svg', stroke=black);
-                padding-right: 2.5em;
-                line-height: 2em;
-                font-weight: 600;
-                font-size: 1.25em;
-                right: 2vw;
-                text-align: right;
-            }
-        }
-
-
-
-        > input:checked + .option {
-            background: repeating-linear-gradient( 45deg, #02B290, #02B290 0.625rem, #019075 0.625rem, #019075 1.25rem );
-
-
-            &::after {
-                content: 'Published';
-                background-image: svg-load('../../icons/toggle-right.svg', stroke=white);
-                color: white;
-            }
-        }
-    }
-
-    .form-item, .form-actions {
-        height: 100%;
-        margin: 0;
-    }
-
-    .form-actions {
-        position: relative;
-        z-index: 1;
-        padding: 1vmax 1vmax;
-    }
-}
-
-
-
-.messages--error.messages--error {
-    background-color: #EF604D;
-    border-color: #EF604D;
-    color: white;
-    background-image: svg-load('../../../../../../core/misc/icons/e32700/error.svg', fill=white);
-
-    a {
-        color: white;
-        text-decoration: underline;
-        text-underline-offset: .25em;
-    }
-}*/

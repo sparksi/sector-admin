@@ -1,0 +1,5 @@
+.ui-dialog .ui-dialog-titlebar,
+.cke_reset_all .cke_dialog_title {
+  background-color: var(--sector-admin-blue)!important;
+  font-family: var(--sector-admin-font) !important;
+}

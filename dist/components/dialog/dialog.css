@@ -1,0 +1,7 @@
+.ui-dialog .ui-dialog-titlebar,
+.cke_reset_all .cke_dialog_title {
+  background-color: #436FFC!important;
+  background-color: var(--sector-admin-blue)!important;
+  font-family: -apple-system,BlinkMacSystemFont,arial,sans-serif !important;
+  font-family: var(--sector-admin-font) !important;
+}

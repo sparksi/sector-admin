@@ -1,12 +1,15 @@
 :root {
-  --white: rgb(255,255,255);
-  --black: #000000;
-  --dark: #1a1a1a;
-  --info: rgb(135, 219, 252);
+  --sector-admin-white: rgb(255,255,255);
+  --sector-admin-black: #000000;
+  --sector-admin-dark: #1a1a1a;
+  --sector-admin-info: rgb(135, 219, 252);
   
-  --sector-gray: #667891;
-  --sector-red: #EF604D;
-  --sector-blue: #436FFC;
-  --sector-green: #02B290;
-  --sector-brown: #B28A70;
+  --sector-admin-gray: #667891;
+  --sector-admin-red: #EF604D;
+  --sector-admin-blue: #436FFC;
+  --sector-admin-green: #02B290;
+  --sector-admin-brown: #B28A70;
+
+  --sector-admin-font: -apple-system,BlinkMacSystemFont,arial,sans-serif;
+
 }

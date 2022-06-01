@@ -4,6 +4,8 @@
 function sector_admin_preprocess_html(&$variables) {
 
   $theme = \Drupal::theme()->getActiveTheme();
+
+  $variables['attributes']['class'][] = 'sector-admin-theme';
   
   $svgFavicon = [
     '#tag' => 'link',

@@ -1,5 +1,5 @@
 .path-admin .button.button--primary,
 .layout-container .button.button--primary {
-  background-color: var(--sector-blue);
+  background-color: var(--sector-admin-blue);
   background-image: none;
 }

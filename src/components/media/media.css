@@ -20,3 +20,138 @@
   width:100%;
   padding: 15px;
 }
+
+.media-library-widget-modal {
+  --columns: repeat(6, 1fr);
+  
+
+  /* has sidebar */
+  .media-library-menu + .media-library-content {
+    --columns: repeat(5, 1fr);
+  }
+
+  .media-library-views-form {
+  
+    /*&[data-drupal-media-type="file"] .media-library-views-form__rows  {
+      @media screen and (min-width: 60em) {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+
+      @media screen and (min-width: 1400px) {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }*/
+  }
+  
+  .media-library-views-form__rows {
+    display: grid;
+    grid-template-columns: var(--columns);
+    gap: 10px;
+    margin: 0;
+  }
+
+  .media-library-item--grid {
+    width: 100%!important;
+    padding: 0!important;
+    border: 1px solid #dbdbdb;
+
+    &.checked {
+      border-color: var(--sector-admin-blue);
+      outline: 2px solid var(--sector-admin-blue);
+
+      strong {
+        color: var(--sector-admin-blue);
+      }
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.media-library-item__click-to-select-checkbox input {
+  accent-color: var(--sector-admin-blue);
+}
+
+.media-library-item__content .media--view-mode-media-library {
+  height: 100%;
+  padding: 10px;
+  padding-top: 42px;
+
+  @media (hover: hover) {
+    &:hover strong {
+      color: var(--sector-admin-blue);
+    }
+  }
+
+  .frame {
+    aspect-ratio: 1 / 1;
+    background-color: #eee;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8px;
+    display: flex;
+    width: 100%;
+    background: repeating-linear-gradient( 45deg, var( --toolbar-stripe-a), var( --toolbar-stripe-a) 0.625rem, var(--toolbar-stripe-b) 0.625rem, var(--toolbar-stripe-b) 1.25rem );
+
+    --toolbar-stripe-a: var(--admin-toolbar-a, #f7f7f7);
+    --toolbar-stripe-b: var(--admin-toolbar-b, #f9f9f9);
+
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+
+  strong, dl {
+    display: block;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+  strong + dl {
+    margin-top: 8px;
+  }
+
+  dl {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    column-gap: 10px;
+  }
+
+  dd {
+    margin: 0;
+
+    mark {
+      background-color: var(--icon-color, black);
+      color: white;
+      display: inline-block;
+      border-radius: 3px;
+      padding: 2px 3px;
+      line-height: none;
+    }
+  }
+
+  &[data-type="application/pdf"] {
+    --icon-color: #F40F02;
+  }
+  &[data-type="application/msword"],
+  &[data-type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"] {
+    --icon-color: #194bae;
+  }
+  &[data-type="application/vnd.openxmlformats-officedocument.presentationml.presentation"] {
+    --icon-color: #ab2516;
+  }
+  &[data-type="application/vnd.ms-excel"],
+  &[data-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"] {
+    --icon-color: #0d5e2b;
+  }
+}
