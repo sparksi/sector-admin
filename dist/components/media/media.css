@@ -38,21 +38,6 @@
   }
 
 
-.media-library-widget-modal .media-library-views-form {
-  
-    /*&[data-drupal-media-type="file"] .media-library-views-form__rows  {
-      @media screen and (min-width: 60em) {
-        grid-template-columns: repeat(5, 1fr);
-      }
-
-
-      @media screen and (min-width: 1400px) {
-        grid-template-columns: repeat(6, 1fr);
-      }
-    }*/
-  }
-
-
 .media-library-widget-modal .media-library-views-form__rows {
     display: -ms-grid;
     display: grid;
@@ -90,25 +75,111 @@
     }
 
 
-.media-library-item__click-to-select-checkbox input {
-  accent-color: #436FFC;
-  accent-color: var(--sector-admin-blue);
-}
+.media--view-mode-media-library.ds-1col {
 
-
-.media-library-item__content .media--view-mode-media-library {
   height: 100%;
   padding: 0.625rem;
-  padding-top: 2.625rem;
 }
+
+
+.media--view-mode-media-library.ds-1col.media--type-file {
+    padding-top: 2.625rem;
+  }
 
 
 @media (hover: hover) {
-    .media-library-item__content .media--view-mode-media-library:hover strong {
+    :not(.sortable-chosen) > .media--view-mode-media-library.ds-1col:hover strong,
+    :not(.sortable-ghost) > .media--view-mode-media-library.ds-1col:hover strong {
       color: #436FFC;
       color: var(--sector-admin-blue);
     }
   }
+
+
+.sortable-ghost > .media--view-mode-media-library.ds-1col {
+    opacity: 0.35;
+  }
+
+
+.media--view-mode-media-library.ds-1col .truncate {
+    display: block;
+    word-break: break-all;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+
+.media--view-mode-media-library.ds-1col .truncate p {
+      margin: 0;
+      font-family: courier;
+      line-height: 1.25;
+    }
+
+
+.media--view-mode-media-library.ds-1col strong, .media--view-mode-media-library.ds-1col dl {
+    display: block;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+
+.media--view-mode-media-library.ds-1col strong + dl {
+    margin-top: 0.5rem;
+  }
+
+
+.media--view-mode-media-library.ds-1col dl {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.6875rem;
+    -moz-column-gap: 0.625rem;
+         column-gap: 0.625rem;
+  }
+
+
+.media--view-mode-media-library.ds-1col dd {
+    margin: 0;
+  }
+
+
+.media--view-mode-media-library.ds-1col dd mark {
+      background-color: black;
+      background-color: var(--icon-color, black);
+      color: white;
+      display: inline-block;
+      border-radius: 3px;
+      padding: 0.125rem 0.1875rem;
+      line-height: none;
+    }
+
+
+.media--view-mode-media-library.ds-1col[data-type="application/pdf"] {
+    --icon-color: #F40F02;
+  }
+
+
+.media--view-mode-media-library.ds-1col[data-type="application/msword"],
+  .media--view-mode-media-library.ds-1col[data-type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"] {
+    --icon-color: #194bae;
+  }
+
+
+.media--view-mode-media-library.ds-1col[data-type="application/vnd.openxmlformats-officedocument.presentationml.presentation"] {
+    --icon-color: #ab2516;
+  }
+
+
+.media--view-mode-media-library.ds-1col[data-type="application/vnd.ms-excel"],
+  .media--view-mode-media-library.ds-1col[data-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"] {
+    --icon-color: #0d5e2b;
+  }
+
+
+.media-library-item__click-to-select-checkbox input {
+  accent-color: #436FFC;
+  accent-color: var(--sector-admin-blue);
+}
 
 
 .media-library-item__content .media--view-mode-media-library .frame {
@@ -134,63 +205,3 @@
       text-align: center;
       font-size: 0.75rem;
     }
-
-
-.media-library-item__content .media--view-mode-media-library strong, .media-library-item__content .media--view-mode-media-library dl {
-    display: block;
-    line-height: 1.35;
-    word-break: break-word;
-  }
-
-
-.media-library-item__content .media--view-mode-media-library strong + dl {
-    margin-top: 0.5rem;
-  }
-
-
-.media-library-item__content .media--view-mode-media-library dl {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    font-size: 0.6875rem;
-    -moz-column-gap: 0.625rem;
-         column-gap: 0.625rem;
-  }
-
-
-.media-library-item__content .media--view-mode-media-library dd {
-    margin: 0;
-  }
-
-
-.media-library-item__content .media--view-mode-media-library dd mark {
-      background-color: black;
-      background-color: var(--icon-color, black);
-      color: white;
-      display: inline-block;
-      border-radius: 3px;
-      padding: 0.125rem 0.1875rem;
-      line-height: none;
-    }
-
-
-.media-library-item__content .media--view-mode-media-library[data-type="application/pdf"] {
-    --icon-color: #F40F02;
-  }
-
-
-.media-library-item__content .media--view-mode-media-library[data-type="application/msword"],
-  .media-library-item__content .media--view-mode-media-library[data-type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"] {
-    --icon-color: #194bae;
-  }
-
-
-.media-library-item__content .media--view-mode-media-library[data-type="application/vnd.openxmlformats-officedocument.presentationml.presentation"] {
-    --icon-color: #ab2516;
-  }
-
-
-.media-library-item__content .media--view-mode-media-library[data-type="application/vnd.ms-excel"],
-  .media-library-item__content .media--view-mode-media-library[data-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"] {
-    --icon-color: #0d5e2b;
-  }
